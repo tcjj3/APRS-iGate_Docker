@@ -24,7 +24,7 @@ RUN export DIR_TMP="$(mktemp -d)" \
   && echo "Configure blacklist" \
   && ([ ! -d /etc/modprobe.d ] && mkdir -p /etc/modprobe.d) || echo "continue..." \
   && BLACKLIST_PATH=/etc/modprobe.d/blacklist.conf \
-  && if [ -a /etc/modprobe.d/raspi-blacklist.conf ]; then \
+  && if [ -f /etc/modprobe.d/raspi-blacklist.conf ]; then \
         BLACKLIST_PATH=/etc/modprobe.d/raspi-blacklist.conf; \
      else \
         BLACKLIST_PATH=/etc/modprobe.d/blacklist.conf; \
