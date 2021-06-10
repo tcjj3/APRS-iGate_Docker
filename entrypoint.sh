@@ -46,6 +46,10 @@ default_comment="PyMultimonAPRS iGate"
 
 if [ ! -z "$CALLSIGN" ]; then
 
+if [ ! -z "$SSID" ]; then
+CALLSIGN="${CALLSIGN}-${SSID}"
+fi
+
 if [ -z "$APRSKEY" ]; then
 APRSKEY=`aprs_keygen.py "$CALLSIGN" | awk '{print $4}'`
 fi
