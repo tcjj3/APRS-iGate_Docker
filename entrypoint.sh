@@ -46,12 +46,13 @@ default_comment="PyMultimonAPRS iGate"
 
 if [ ! -z "$CALLSIGN" ]; then
 
-if [ ! -z "$SSID" ]; then
-CALLSIGN="${CALLSIGN}-${SSID}"
-fi
 
 if [ -z "$APRSKEY" ]; then
 APRSKEY=`aprs_keygen.py "$CALLSIGN" | awk '{print $4}'`
+fi
+
+if [ ! -z "$SSID" ]; then
+CALLSIGN="${CALLSIGN}-${SSID}"
 fi
 
 if [ -z "$GATEWAY" ]; then
@@ -99,7 +100,11 @@ TEXT="$status_text"
 fi
 
 
+
+
 cp "$CONFIG_FILE" "$tmp_dir/pymultimonaprs.json" && CONFIG_FILE="$tmp_dir/pymultimonaprs.json"
+
+
 
 
 sed -i "s/\"callsign\": [^,]*,/\"callsign\": \"$CALLSIGN\",/g" $CONFIG_FILE
@@ -118,12 +123,17 @@ sed -i "s|\"symbol\": [^,]*,|\"symbol\": \"$SYMBOL\",|g" $CONFIG_FILE
 sed -i "s|\"comment\": [^,]*,|\"comment\": \"$COMMENT\",|g" $CONFIG_FILE
 
 
+
+
 #$cmd -c "$CONFIG_FILE" >> "$stdout_log" 2>> "$stderr_log"
 $cmd -c "$CONFIG_FILE" > /dev/null 2>&1
+
 
 if [ -f "$pid_file" ]; then
     rm "$pid_file"
 fi
+
+
 
 
 else
