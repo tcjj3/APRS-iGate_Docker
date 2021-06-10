@@ -96,7 +96,7 @@ RUN export DIR_TMP="$(mktemp -d)" \
   && sed -i 's/# Provides:/# Provides: pymultimonaprs/g' pymultimonaprs \
   && sed -i 's/# Description:       Enable service provided by daemon./# Description:       Starts pymultimonaprs APRS iGate daemon/g' pymultimonaprs \
   && cp pymultimonaprs /etc/init.d/ \
-  && sed -i "s/sudo -u \"\$user\" //gi; s/sudo //gi; " /etc/init.d/pymultimonaprs
+  && sed -i "s/sudo -u \"\$user\" //gi; s/sudo //gi; " /etc/init.d/pymultimonaprs \
   && useradd -r -s /sbin/nologin -M aprs || echo "continue..." \
   && echo "Install init.d script template done." \
   && rm -rf ${DIR_TMP} \
