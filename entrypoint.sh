@@ -28,7 +28,7 @@ default_gain=39
 #aprs_gateway="noam.aprs2.net"
 aprs_gateway="euro.aprs2.net"
 aprs_gateway_port=14580
-status_text="RTL-SDR on $(uname -m) $(uname -s) built with http://git.io/v3QXq configuration"
+status_text="RTL-SDR on $(uname -m) $(uname -s) using https://github.com/tcjj3/APRS-iGate_Docker"
 
 default_ppm="0"
 default_device_index="0"
