@@ -22,15 +22,16 @@ RUN export DIR_TMP="$(mktemp -d)" \
         ARCH=$(dpkg --print-architecture); \
      fi \
   && echo "Configure blacklist" \
+  && ([ ! -d /etc/modprobe.d ] && mkdir -p /etc/modprobe.d) || echo "continue..." \
   && BLACKLIST_PATH=/etc/modprobe.d/blacklist.conf \
   && if [ -a /etc/modprobe.d/raspi-blacklist.conf ]; then \
         BLACKLIST_PATH=/etc/modprobe.d/raspi-blacklist.conf; \
      else \
         BLACKLIST_PATH=/etc/modprobe.d/blacklist.conf; \
      fi \
-  && echo "blacklist dvb_usb_rtl28xxu" >> $BLACKLIST_PATH \
-  && echo "blacklist rtl_2832" >> $BLACKLIST_PATH \
-  && echo "blacklist rtl_2830" >> $BLACKLIST_PATH \
+  && echo "blacklist dvb_usb_rtl28xxu" >> $BLACKLIST_PATH || echo "continue..." \
+  && echo "blacklist rtl_2832" >> $BLACKLIST_PATH || echo "continue..." \
+  && echo "blacklist rtl_2830" >> $BLACKLIST_PATH || echo "continue..." \
   && echo "Configure blacklist done." \
   && echo "Create RTL-SDR directory" \
   && mkdir $RTL_BUILD_DIR \
