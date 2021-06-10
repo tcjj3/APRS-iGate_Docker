@@ -28,9 +28,9 @@ RUN export DIR_TMP="$(mktemp -d)" \
      else \
         BLACKLIST_PATH=/etc/modprobe.d/blacklist.conf; \
      fi \
-  && echo "blacklist dvb_usb_rtl28xxu
-blacklist rtl_2832
-blacklist rtl_2830" >> $BLACKLIST_PATH \
+  && echo "blacklist dvb_usb_rtl28xxu" >> $BLACKLIST_PATH \
+  && echo "blacklist rtl_2832" >> $BLACKLIST_PATH \
+  && echo "blacklist rtl_2830" >> $BLACKLIST_PATH \
   && echo "Configure blacklist done." \
   && echo "Create RTL-SDR directory" \
   && mkdir $RTL_BUILD_DIR \
