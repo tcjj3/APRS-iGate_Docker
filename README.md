@@ -29,7 +29,7 @@ sudo docker run -d -i -t \
  -e LAT="XX.XXXXXX" \
  -e LNG="XXX.XXXXXX" \
  -e TABLE="R" \
- -e SYMBOL="&" \
+ -e SYMBOL="\\&" \
  -e COMMENT="PyMultimonAPRS iGate" \
  -e TEXT="RTL-SDR on $(uname -m) $(uname -s) built with http://git.io/v3QXq configuration" \
  tcjj3/aprs-igate_docker:latest
