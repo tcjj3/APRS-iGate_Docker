@@ -12,8 +12,8 @@ RUN export DIR_TMP="$(mktemp -d)" \
   && apt-get update \
   || echo "continue..." \
   && echo "Install dependencies" \
-  && apt-get install --no-install-recommends -y apt-get -y install procps psmisc net-tools iproute2 git build-essential cmake libusb-1.0-0-dev sox libtool autoconf automake libfftw3-dev qt4-qmake libpulse-dev libx11-dev python-pkg-resources bc checkinstall \
-  || apt-get install --no-install-recommends -y apt-get -y install procps psmisc net-tools iproute2 git build-essential cmake libusb-1.0-0-dev sox libtool autoconf automake libfftw3-dev qt4-qmake libpulse-dev libx11-dev python-pkg-resources bc \
+  && apt-get install --no-install-recommends -y procps psmisc net-tools iproute2 git build-essential cmake libusb-1.0-0-dev sox libtool autoconf automake libfftw3-dev qt4-qmake libpulse-dev libx11-dev python-pkg-resources bc checkinstall \
+  || apt-get install --no-install-recommends -y procps psmisc net-tools iproute2 git build-essential cmake libusb-1.0-0-dev sox libtool autoconf automake libfftw3-dev qt4-qmake libpulse-dev libx11-dev python-pkg-resources bc \
   && echo "Install dependencies done." \
   && RTL_BUILD_DIR=~/rtl_build \
   && if [ "$(dpkg --print-architecture)" = "armhf" ]; then \
