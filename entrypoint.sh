@@ -35,7 +35,7 @@ default_device_index="0"
 default_latitude="0.000000"
 default_longitude="0.000000"
 default_table="R"
-default_symbol="&"
+default_symbol="\\&"
 default_comment="PyMultimonAPRS iGate"
 
 
@@ -114,7 +114,7 @@ sed -i "s/\"freq\": [^,]*,/\"freq\": $FREQ,/g" $CONFIG_FILE
 sed -i "s/\"ppm\": [^,]*,/\"ppm\": $PPM,/g" $CONFIG_FILE
 sed -i "s/\"gain\": [^,]*,/\"gain\": $GAIN,/g" $CONFIG_FILE
 sed -i "s/\"lat\": [^,]*,/\"lat\": $LAT,/g" $CONFIG_FILE
-sed -i "s/\"lng\": [^,]*,/\"lng\": $LON,/g" $CONFIG_FILE
+sed -i "s/\"lng\": [^,]*,/\"lng\": $LNG,/g" $CONFIG_FILE
 sed -i "s|\"text\": [^,]*,|\"text\": \"$TEXT\",|g" $CONFIG_FILE
 
 sed -i "s/\"device_index\": [^,]*,/\"device_index\": $DEVICE_INDEX,/g" $CONFIG_FILE
