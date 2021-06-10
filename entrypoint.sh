@@ -37,6 +37,8 @@ default_longitude="0.000000"
 default_table="R"
 default_symbol="\\&"
 default_comment="PyMultimonAPRS iGate"
+default_send_every="300"
+default_ambiguity="0"
 
 
 
@@ -99,6 +101,14 @@ if [ -z "$TEXT" ]; then
 TEXT="$status_text"
 fi
 
+if [ -z "$SEND_EVERY" ]; then
+SEND_EVERY="$default_send_every"
+fi
+
+if [ -z "$AMBIGUITY" ]; then
+AMBIGUITY="$default_ambiguity"
+fi
+
 
 
 
@@ -121,6 +131,8 @@ sed -i "s/\"device_index\": [^,]*,/\"device_index\": $DEVICE_INDEX,/g" $CONFIG_F
 sed -i "s|\"table\": [^,]*,|\"table\": \"$TABLE\",|g" $CONFIG_FILE
 sed -i "s|\"symbol\": [^,]*,|\"symbol\": \"$SYMBOL\",|g" $CONFIG_FILE
 sed -i "s|\"comment\": [^,]*,|\"comment\": \"$COMMENT\",|g" $CONFIG_FILE
+sed -i "s|\"send_every\": [^,]*,|\"send_every\": $SEND_EVERY,|g" $CONFIG_FILE
+sed -i "s|\"ambiguity\": [^,]*|\"ambiguity\": $AMBIGUITY|g" $CONFIG_FILE
 
 
 
