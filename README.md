@@ -31,7 +31,7 @@ sudo docker run -d -i -t \
  -e TABLE="R" \
  -e SYMBOL="\\&" \
  -e COMMENT="PyMultimonAPRS iGate" \
- -e TEXT="RTL-SDR on $(uname -m) $(uname -s) using https://github.com/tcjj3/APRS-iGate_Docker" \
+ -e TEXT="RTL-SDR on $(uname -m) $(uname -s) using PyMultimonAPRS iGate" \
  -e SEND_EVERY="300" \
  -e AMBIGUITY="0" \
  tcjj3/aprs-igate_docker:latest
