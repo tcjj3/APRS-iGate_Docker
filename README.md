@@ -28,6 +28,7 @@ sudo docker run -d -i -t \
  -e FREQ="144.39" \
  -e PPM="0" \
  -e GAIN="39" \
+ -e OFFSET_TUNING="false" \
  -e DEVICE_INDEX="0" \
  -e DEVICE="default" \
  -e LAT="XX.XXXXXX" \
