@@ -159,8 +159,8 @@ sed -i "s/\"source\": [^,]*,/\"source\": \"$SOURCE\",|g" $CONFIG_FILE
 
 [ ! -z "$OFFSET_TUNING" ] && sed -i "s/\"offset_tuning\": [^,]*,/\"offset_tuning\": $OFFSET_TUNING,/g" $CONFIG_FILE
 
-sed -i "s/\"device_index\": [^,]*,/\"device_index\": $DEVICE_INDEX,/g" $CONFIG_FILE
-sed -i "s|\"device\": [^,]*,|\"device\": \"$DEVICE\",|g" $CONFIG_FILE
+sed -i "s/\"device_index\": [^,]*/\"device_index\": $DEVICE_INDEX/g" $CONFIG_FILE
+sed -i "s|\"device\": [^,]*|\"device\": \"$DEVICE\"|g" $CONFIG_FILE
 sed -i "s|\"table\": [^,]*,|\"table\": \"$TABLE\",|g" $CONFIG_FILE
 sed -i "s|\"symbol\": [^,]*,|\"symbol\": \"$SYMBOL\",|g" $CONFIG_FILE
 sed -i "s|\"comment\": [^,]*,|\"comment\": \"$COMMENT\",|g" $CONFIG_FILE
